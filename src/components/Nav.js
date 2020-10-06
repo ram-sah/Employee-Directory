@@ -1,21 +1,10 @@
 import React from "react";
-// import SearchBox from "./SearchBox.js";
+import SearchBox from "./SearchBox.js";
 import "../styles/Nav.css";
 
-function Nav({ handleSearchChange }) {
+function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
+    <nav className="navbar navbar-expand-lg navbar-light">   
       <div className="collapse navbar-collapse row" id="navbarNav">
         <div className="input-group col-8">
           <div className="input-group-prepend">
@@ -26,9 +15,9 @@ function Nav({ handleSearchChange }) {
           <input type="date" className="form-control" />
           <input type="date" className="form-control" />
         </div>
-        {/* <div className="search-area col-4">
-          <SearchBox handleSearchChange={handleSearchChange} />
-        </div> */}
+        <div className="search-area col-4">
+          <SearchBox />
+        </div>
       </div>
     </nav>
   );
