@@ -1,14 +1,16 @@
 import React from "react";
-export default function Headings() {
+export default function Headings(props) {
     return (
         <thead>
             <tr>
-                <th >IMAGE<hr/></th>
-                <th >FIRST-NAME<hr/></th>
-                <th >LAST-NAME<hr/></th>
-                <th >PHONE<hr/></th>
-                <th >EMAIL<hr/></th>
-                <th >DOB<hr/></th>                
+                <th onClick= {props.renderSortedEmployees}>IMAGE<hr/></th>
+                <th onClick= {props.renderSortedEmployees}>FIRST-NAME<hr/></th>
+                <th onClick= {props.renderSortedEmployees}>LAST-NAME<hr/></th>
+                <th onClick= {props.renderSortedEmployees}>PHONE<hr/></th>
+                <th onClick= {props.renderSortedEmployees}>EMAIL<hr/></th>
+                <th onClick= {props.renderSortedEmployees}>DOB<hr/></th>   
+                <th onClick= {props.renderSortedEmployees}>GENDER<hr/></th> 
+                          
             </tr>
         </thead>
     )
