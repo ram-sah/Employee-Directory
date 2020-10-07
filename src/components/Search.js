@@ -1,8 +1,6 @@
 import React, { Component } from "react";
- import API from "../utils/API";
-
+import API from "../utils/API";
 import SearchBox from "../components/SearchBox";
-import SearchResults from "../components/SearchResults";
 import TableBody from "../components/TableBody";
 import Headings from "../components/Headings";
 
@@ -28,32 +26,33 @@ class Search extends Component {
     console.log(event.target.name)
     const { name, value } = event.target
     
-    this.setState( {search: value, filteredResults: this.state.results.filter(item=>item.name.first.toLowerCase().indexOf(value.toLowerCase()) !== -1)})
+    this.setState( {search: value, filteredResults: this.state.results.filter(
+      item=>item.name.first.toLowerCase().indexOf(value.toLowerCase()) !== -1)})
 
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
 
-    this.setState(() => {
-        const updatedResults = this.state.filteredResults.filter(x => 
-            x.name.first.includes(this.state.search) || 
-            x.name.last.includes(this.state.search) ||
-            x.login.username.includes(this.state.search) || 
-            x.location.state.includes(this.state.search) ||
-            x.location.city.includes(this.state.search))
-        if (!this.state.search) {
-            return { filteredResults: this.state.results }
-        } else {
-            return { filteredResults: updatedResults }
-        };
-    });
+    // this.setState(() => {
+    //     const updatedResults = this.state.filteredResults.filter(x => 
+    //         x.name.first.includes(this.state.search) || 
+    //         x.name.last.includes(this.state.search) ||
+    //         x.login.username.includes(this.state.search) || 
+    //         x.location.state.includes(this.state.search) ||
+    //         x.location.city.includes(this.state.search))
+    //     if (!this.state.search) {
+    //         return { filteredResults: this.state.results }
+    //     } else {
+    //         return { filteredResults: updatedResults }
+    //     };
+    // });
 
     
 };
 
 renderSortedEmployees = event => {
-  event.preventDefault();
+  // event.preventDefault();
 
   // found at https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
   function compare(a, b) {
@@ -74,17 +73,17 @@ renderSortedEmployees = event => {
 
   render() {
     return (
-      <div>
+      <div>  
+        
         <SearchBox  
           employees = { this.state.results }
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             value={this.state.search}>
-          <h1 className="text-center">Search By Name!</h1>
+          
         </SearchBox> 
-        {/* <Nav />
-        <table className="table table-striped"> */}
-        <table>
+        
+        <table className="table table-striped">
           <Headings renderSortedEmployees={this.renderSortedEmployees}/>
         <TableBody employees={this.state.filteredResults} /> 
         </table>      

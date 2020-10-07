@@ -1,8 +1,20 @@
 .searchbox button {
     border: 1px solid #1d3577;
+    background-color: #1a7991;
+    color: #ffffff;    
 }
 
 .searchbox button:hover {
     background-color: #18e67f;
     color: #ffffff;
+}
+.form-inline {
+    float: left;
+    position: relative;
+    left: 40%;
+}
+.space {
+ /* height: 6em; */
+ margin-top: 5rem;
+ margin-bottom: 1.5rem;
 }

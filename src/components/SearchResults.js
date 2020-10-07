@@ -1,6 +1,4 @@
 import React from "react";
-// import "../styles";
-
 function SearchResults(props) {
   return (
     <ul className="list-group search-results">
