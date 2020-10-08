@@ -10,19 +10,19 @@ export default function TableBody({ employees }) {
         const day = dayArray[0];
         const formattedDate = [month, day, year].join("-");
         return formattedDate;
-      }
+    }
     return (
         <tbody>
             {employees.map(emp => (
                 <tr>
-                    <td > <img src={emp.picture.medium} className='rounded-circle border border-success ml-2 mt-2' 
-                    alt="employeePhoto"></img></td>
+                    <td > <img src={emp.picture.medium} className='rounded-circle border border-success ml-2 mt-2'
+                        alt="employeePhoto"></img></td>
                     <th >{emp.name.first}</th>
                     <th >{emp.name.last}</th>
-                    <td >{emp.phone}</td>                    
+                    <td >{emp.phone}</td>
                     <td ><a href={"mailto:" + emp.email}>{emp.email}</a></td>
                     <td >{formatDate(emp.dob.date)}</td>
-                    <td >{emp.gender}   <Gender gender={emp.gender}/></td>
+                    <td >{emp.gender}   <Gender gender={emp.gender} /></td>
                 </tr>
             ))
             }

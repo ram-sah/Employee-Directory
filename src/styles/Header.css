@@ -7,3 +7,9 @@
   border-bottom: 3px solid #DB162F;
   margin-bottom: 40px;
 }
+.bn {
+  background-color: #b0f595;
+  border-radius: 5px;
+  width: 8em;
+  border: 1px solid #1d3577;
+}   

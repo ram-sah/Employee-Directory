@@ -3,14 +3,13 @@ export default function Headings(props) {
     return (
         <thead>
             <tr>
-                <th onClick= {props.renderSortedEmployees}>IMAGE<hr/></th>
-                <th onClick= {props.renderSortedEmployees}>FIRST-NAME<hr/></th>
-                <th onClick= {props.renderSortedEmployees}>LAST-NAME<hr/></th>
-                <th onClick= {props.renderSortedEmployees}>PHONE<hr/></th>
-                <th onClick= {props.renderSortedEmployees}>EMAIL<hr/></th>
-                <th onClick= {props.renderSortedEmployees}>DOB<hr/></th>   
-                <th onClick= {props.renderSortedEmployees}>GENDER<hr/></th> 
-                          
+            <th ><button className="bn">IMAGE</button><hr/></th>
+            <th onClick= {props.renderSortedEmployeesByFirst}><button className="bn">FIRST-NAME</button><hr/></th>
+            <th onClick= {props.renderSortedEmployeesByLast}><button className="bn">LAST-NAME</button><hr/></th>
+            <th ><button className="bn">PHONE</button><hr/></th>
+            <th onClick= {props.renderSortedEmployeesByFirst}><button className="bn">EMAIL</button><hr/></th>
+            <th ><button className="bn">DOB</button><hr/></th>   
+            <th ><button className="bn">GENDER</button><hr/></th>                           
             </tr>
         </thead>
     )

@@ -5,3 +5,9 @@
 .female {
     color: pink
 }
+.table {
+    width: 90%!important;
+    margin-bottom: 1rem;
+    color: #212529;
+    margin: auto;
+  }
