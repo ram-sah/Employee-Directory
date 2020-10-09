@@ -28,19 +28,43 @@ class Search extends Component {
         item => item.name.first.toLowerCase().indexOf(value.toLowerCase()) !== -1)
     })
   };
-
-  renderSortedEmployeesByFirst = event => {
-    // event.preventDefault();  
+  //
+  renderSortedEmployees = event => {
+    console.log(event.target.id);
+    const context = this
+    function compareF(a, b) {
+      return context.compareFirst(a, b, event.target.id)
+    }
     // found at https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
-    this.setState({ filteredResults: this.state.filteredResults.sort(this.compareFirst), order: !this.state.order })
+    this.setState({ filteredResults: this.state.filteredResults.sort(compareF), order: !this.state.order })
   };
-  renderSortedEmployeesByLast = event => {
-    console.log(this.state.filteredResults)
-    this.setState({ filteredResults: this.state.filteredResults.sort(this.compareLast), order: !this.state.order })
-  };
-  compareFirst = (a, b) => {
-    const nameA = a.name.first.toUpperCase();
-    const nameB = b.name.first.toUpperCase();
+  //Comparing all headings 
+  compareFirst = (a, b, item1, item2 = null) => {
+    let nameA;
+    let nameB;
+    // console.log(item1)
+    if (item1 === "firstName") {
+      nameA = a.name.first.toUpperCase();
+      nameB = b.name.first.toUpperCase();
+    }
+    if (item1 === "lastName") {
+      nameA = a.name.last.toUpperCase();
+      nameB = b.name.last.toUpperCase();
+    }
+    if (item1 === "phone") {
+      nameA = a.phone.toUpperCase();
+      nameB = b.phone.toUpperCase();
+    }
+    if (item1 === "email") {
+      nameA = a.email.toUpperCase();
+      nameB = b.email.toUpperCase();
+    }
+    if (item1 === "dob") {
+      nameA = a.dob.date;
+      nameB = b.dob.date;
+    };
+
+    // console.log(a, b);
     let comparison = 0;
     if (this.state.order) {
       if (nameA > nameB) {
@@ -58,26 +82,7 @@ class Search extends Component {
     }
     return comparison;
   };
-  compareLast = (a, b) => {
-    const nameA = a.name.last.toUpperCase();
-    const nameB = b.name.last.toUpperCase();
-    let comparison = 0;
-    if (this.state.order) {
-      if (nameA > nameB) {
-        comparison = 1;
-      } else if (nameA < nameB) {
-        comparison = -1;
-      };
-    }
-    else {
-      if (nameA > nameB) {
-        comparison = -1;
-      } else if (nameA < nameB) {
-        comparison = 1;
-      };
-    }
-    return comparison;
-  };
+  //rendering the pages  
   render() {
     return (
       <div>
@@ -89,8 +94,8 @@ class Search extends Component {
         </SearchBox>
         <table className="table table-striped">
           <Headings
-            renderSortedEmployeesByFirst={this.renderSortedEmployeesByFirst}
-            renderSortedEmployeesByLast={this.renderSortedEmployeesByLast} />
+            renderSortedEmployees={this.renderSortedEmployees}
+          />
           <TableBody employees={this.state.filteredResults} />
         </table>
       </div>
