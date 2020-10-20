@@ -1,5 +1,7 @@
 import React from "react";
 import Gender from './Gender';
+
+//  (props)   inside use props.employees
 export default function TableBody({ employees }) {
     // convert date formate mm-dd-yyy
     function formatDate(date) {

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/SearchBox.css";
 function SearchBox(props) {
-  console.log(props)
+  // console.log("searchBox:", props)
   return (
     <div className="searchbox">
       <h5><strong>Search by First Name:</strong></h5>
