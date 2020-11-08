@@ -6,7 +6,7 @@
 
 ## Description: 
 
-An Employee Directory App with React. This app utilizes an API to populate random users and then create a directory. Other users on the app can search for employees by "name" and also organize each field (Name, Email, DOB) in ascending or descending order.
+An Employee Directory App with React. This app utilizes an API to populate random users and then create a directory. Users can search for employees by "name" and also organize each field (Name, LastName, PhoneNumber, Email, DOB) in ascending or descending order.
 This application helps user to view their entire employee directory at once so that they can have quick access to their information. 
          
 ## Table of Contents
@@ -40,11 +40,13 @@ npm start from Terminal
 This project is licensed under the Apache License 2.0
 
 ## Technologies-Used
-* React
-* Bootstrap
-* Moment
-* axios 
-* API
+* React: is a most popular JavaScript library
+* Bootstrap: for styling 
+* Moment: for DOB and to convert date formate
+* axios: for local APIs calls 
+* API: to search employee directory
+* fontawesome: for male female icons 
+* react-router-dom: It contains the DOM bindings for React Router.
 
 ## Questions
             
