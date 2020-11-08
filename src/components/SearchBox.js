@@ -19,7 +19,7 @@ function SearchBox(props) {
          <button className="btn my-2 my-sm-2" onClick={props.reset}>Reset</button>
       </form>
       <div className="space">
-      <h5><strong>Click Headers to Sort</strong></h5>
+      <h5><strong>Click Headers to Sort Assending or Decending order</strong></h5>
       </div>
     </div>
   );
