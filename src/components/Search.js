@@ -92,12 +92,14 @@ class Search extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.search}>
         </SearchBox>
+        <div Style="overflow-x:auto;">
         <table className="table table-striped">
           <Headings
             renderSortedEmployees={this.renderSortedEmployees}
           />
           <TableBody employees={this.state.filteredResults} />
         </table>
+        </div>
       </div>
     );
   }
